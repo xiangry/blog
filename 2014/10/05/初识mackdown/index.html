@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初识markdown | XingSheng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="接触
+程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。
+
+一些语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识markdown">
+<meta property="og:url" content="http://sthkey.com/2014/10/05/初识mackdown/">
+<meta property="og:site_name" content="XingSheng's Blog">
+<meta property="og:description" content="接触
+程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。
+
+一些语法">
+<meta property="og:image" content="https://github.com/xingsheng/quick-cocos2d-x/blob/develop/samples/benchmark/res/UIFont.png">
+<meta property="og:image" content="http://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识markdown">
+<meta name="twitter:description" content="接触
+程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。
+
+一些语法">
+
+  
+    <link rel="alternative" href="/atom.xml" title="XingSheng&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">XingSheng&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Love XiangRY</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://sthkey.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-初识mackdown" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/05/初识mackdown/" class="article-date">
+  <time datetime="2014-10-05T04:10:30.000Z" itemprop="datePublished">10月 5 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习记录/">学习记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初识markdown
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="接触">接触</h2>
+<p><em>程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，<br>看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。</em></p>
+<hr>
+<h2 id="一些语法">一些语法</h2>
+<h2><a id="more"></a></h2>
+<h3 id="标题">标题</h3>
+<ul>
+<li>Atx方式 加前缀#的个数表明标题层级</li>
+</ul>
+<pre><code>    多级标题
+    <span class="comment">#一级标题</span>
+    <span class="comment">##二级标题</span>
+    <span class="comment">###三级标题</span>
+    <span class="comment">####四级标题</span>
+</code></pre><ul>
+<li>Setext方式 加前缀#的个数表明标题层级</li>
+</ul>
+<pre><code>    大标题
+    =<span class="ruby">==
+</span>    小标题
+    -<span class="ruby">--</span>
+</code></pre><hr>
+<h3 id="列表">列表</h3>
+<ul>
+<li><p>列表 </p>
+<ul>
+<li><p>无序列表</p>
+<ul>
+<li><p>无序列表 “- ”</p>
+<pre><code>  符号之后的空格不能少，-+*效果一样，但不能混合使用，因混合是嵌套列表，内容可超长
+  -<span class="ruby"> 无序列表
+</span>  -<span class="ruby"> 无序列表
+</span>  -<span class="ruby"> 很长。我也很长！那比一比啊？比就比！我有这么长，你有我长吗？我有这么这么长！好吧，你赢了！</span>
+</code></pre></li>
+<li><p>无序列表 “+ ”</p>
+<pre><code>  符号之后的空格不能少，-+<span class="keyword">*</span>效果一样，但不能混合使用，因混合是嵌套列表
+  + 无序列表
+  + 无序列表
+</code></pre></li>
+<li><p>无序列表 “* ”</p>
+<pre><code>  符号之后的空格不能少，-+<span class="keyword">*</span>效果一样，但不能混合使用，因混合是嵌套列表
+  <span class="keyword">*</span> 无序列表
+  <span class="keyword">*</span> 无序列表
+</code></pre></li>
+</ul>
+</li>
+<li><p>有序列表 </p>
+<pre><code>  数字不能省略但可无序，点号之后的空格不能少
+  1. 有序列表
+  2. 有序列表
+</code></pre></li>
+</ul>
+</li>
+<li><p>嵌套列表</p>
+<pre><code>      -<span class="ruby">+*可循环使用，但符号之后的空格不能少，符号之前的空格也不能少
+</span>
+      -<span class="ruby"> 嵌套列表
+</span>       + 嵌套列表
+       + 嵌套列表
+        -<span class="ruby"> 嵌套列表
+</span>         * 嵌套列表
+      -<span class="ruby"> 嵌套列表</span>
+</code></pre></li>
+</ul>
+<h2 id="文字超链接">文字超链接</h2>
+<hr>
+<p><a href="http://ibruce.info/2013/11/26/markdown/" title="值得一看，来来来来">不如 markdown简明语法</a></p>
+<pre><code>    <span class="constant">Tooltips</span>可省略
+    [不如 markdown简明语法](<span class="symbol">http:</span>/<span class="regexp">/ibruce.info/</span><span class="number">2013</span>/<span class="number">11</span>/<span class="number">26</span>/markdown/ <span class="string">"值得一看，来来来来"</span>)
+</code></pre><h2 id="图片超链接">图片超链接</h2>
+<hr>
+<p><img src="https://github.com/xingsheng/quick-cocos2d-x/blob/develop/samples/benchmark/res/UIFont.png" alt="GitHub Mark" title="GitHub Mark"></p>
+<pre><code>    多个感叹号，Tooltips可省略，要设置大小只能借助HTML标记
+    ![GitHub Mark](http<span class="variable">s:</span>//github.<span class="keyword">com</span>/xingsheng/quick-cocos2d-<span class="keyword">x</span>/blob/develop/samples/benchmark/<span class="keyword">res</span>/UIFont.png <span class="string">"GitHub Mark"</span>)
+</code></pre><h2 id="图片超链接-1">图片超链接</h2>
+<hr>
+<p><a href="http://bruce-sha.github.io">不如</a><br><img src="http://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png" alt="GitHub Octocat"></p>
+<pre><code>    索引，<span class="number">1</span> <span class="number">2</span>可以是任意字符
+    [不如][<span class="number">1</span>]
+    ![<span class="constant">GitHub</span> <span class="constant">Octocat</span>][<span class="number">2</span>]
+
+    [<span class="number">1</span>]<span class="symbol">:http</span><span class="symbol">://bruce-sha</span>.github.io
+    [<span class="number">2</span>]<span class="symbol">:http</span><span class="symbol">://github</span>.global.ssl.fastly.net/images/modules/logos_page/<span class="constant">Octocat</span>.png
+</code></pre><h2 id="自动链接">自动链接</h2>
+<hr>
+<p><a href="http://ibruce.info">http://ibruce.info</a></p>
+<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x62;&#117;&#x2e;&#x72;&#117;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;">&#x62;&#117;&#x2e;&#x72;&#117;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;</a>
+
+<pre><code>    尖括号
+    <span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">ibruce.info</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">bu.ru@qq.com</span>&gt;</span>
+</code></pre><h2 id="代码：行内代码">代码：行内代码</h2>
+<hr>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> s = <span class="string">"hello Markdown"</span></div><div class="line">println( s )</div></pre></td></tr></table></figure>
+
+<pre><code>        在第一行后指定编程语言，也可以不指定
+</code></pre><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> s = <span class="string">"hello Markdown"</span></div><div class="line">println( s )</div></pre></td></tr></table></figure>
+
+<h1 id="代码：段落代码">代码：段落代码</h1>
+<hr>
+<pre><code><span class="keyword">val</span> s = <span class="string">"hello Markdown"</span>
+println( s )
+
+
+    每行文字前加<span class="number">4</span>个空格或者<span class="number">1</span>个Tab
+    <span class="keyword">val</span> s = <span class="string">"hello Markdown"</span>
+    println( s )
+</code></pre><h1 id="代码：hexo">代码：hexo</h1>
+<hr>
+<pre><code><span class="xml"><span class="tag">&lt;<span class="title">hexoescape</span>&gt;</span>0<span class="tag">&lt;/<span class="title">hexoescape</span>&gt;</span>
+
+可指定编程语言，『』代表左右大括号
+\</span><span class="template_tag">{% codeblock [title] [lang:lua] [<span class="keyword">url</span>] [link text] %\}
+    code snippet
+\{% endcodeblock %\}</span>
+</code></pre><h1 id="注释">注释</h1>
+<hr>
+<pre><code>用html的注释，好像只有这样？
+<span class="comment">&lt;!-- 注释 --&gt;</span>
+</code></pre><hr>
+<p><a href="http://ibruce.info/2013/11/26/markdown/" title="不如的博客">不如 markdown简明语法</a><br><a href="http://www.jianshu.com/p/q81RER" title="Markdown 新手指南">献给写作者的 Markdown 新手指南</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sthkey.com/2014/10/05/初识mackdown/" data-id="vxidu23g9zbfhfmf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/10/05/bash-环境变量/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">bash 环境变量</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习记录/">学习记录</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-Unix/">Linux/Unix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux-Unix/" style="font-size: 20.00px;">Linux/Unix</a><a href="/tags/mackdown/" style="font-size: 10.00px;">mackdown</a><a href="/tags/markdown/" style="font-size: 20.00px;">markdown</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/10/05/初识mackdown/">初识markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/05/bash-环境变量/">bash 环境变量</a>
+          </li>
+        
+          <li>
+            <a href="/2014/09/23/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 XingSheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
