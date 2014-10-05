@@ -1,3 +1,4 @@
 title: {{ title }}
-tags:
+categories: 
+tags: 粗制滥造
 ---
