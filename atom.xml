@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[XingSheng's Blog]]></title>
+  <subtitle><![CDATA[Love XiangRYi]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://sthkey.com/"/>
+  <updated>2014-10-05T08:26:19.291Z</updated>
+  <id>http://sthkey.com/</id>
+  
+  <author>
+    <name><![CDATA[XingSheng]]></name>
+    <email><![CDATA[xingsheng.gao@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[初识markdown]]></title>
+    <link href="http://sthkey.com/2014/10/05/%E5%88%9D%E8%AF%86mackdown/"/>
+    <id>http://sthkey.com/2014/10/05/初识mackdown/</id>
+    <published>2014-10-05T04:10:30.000Z</published>
+    <updated>2014-10-05T06:34:40.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="接触">接触</h2>
+<p><em>程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，<br>看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。</em></p>
+<hr>
+<h2 id="一些语法">一些语法</h2>
+<h2><a id="more"></a></h2>
+<h3 id="标题">标题</h3>
+<ul>
+<li>Atx方式 加前缀#的个数表明标题层级</li>
+</ul>
+<pre><code>    多级标题
+    <span class="comment">#一级标题</span>
+    <span class="comment">##二级标题</span>
+    <span class="comment">###三级标题</span>
+    <span class="comment">####四级标题</span>
+</code></pre><ul>
+<li>Setext方式 加前缀#的个数表明标题层级</li>
+</ul>
+<pre><code>    大标题
+    =<span class="ruby">==
+</span>    小标题
+    -<span class="ruby">--</span>
+</code></pre><hr>
+<h3 id="列表">列表</h3>
+<ul>
+<li><p>列表 </p>
+<ul>
+<li><p>无序列表</p>
+<ul>
+<li><p>无序列表 “- ”</p>
+<pre><code>  符号之后的空格不能少，-+*效果一样，但不能混合使用，因混合是嵌套列表，内容可超长
+  -<span class="ruby"> 无序列表
+</span>  -<span class="ruby"> 无序列表
+</span>  -<span class="ruby"> 很长。我也很长！那比一比啊？比就比！我有这么长，你有我长吗？我有这么这么长！好吧，你赢了！</span>
+</code></pre></li>
+<li><p>无序列表 “+ ”</p>
+<pre><code>  符号之后的空格不能少，-+<span class="keyword">*</span>效果一样，但不能混合使用，因混合是嵌套列表
+  + 无序列表
+  + 无序列表
+</code></pre></li>
+<li><p>无序列表 “* ”</p>
+<pre><code>  符号之后的空格不能少，-+<span class="keyword">*</span>效果一样，但不能混合使用，因混合是嵌套列表
+  <span class="keyword">*</span> 无序列表
+  <span class="keyword">*</span> 无序列表
+</code></pre></li>
+</ul>
+</li>
+<li><p>有序列表 </p>
+<pre><code>  数字不能省略但可无序，点号之后的空格不能少
+  1. 有序列表
+  2. 有序列表
+</code></pre></li>
+</ul>
+</li>
+<li><p>嵌套列表</p>
+<pre><code>      -<span class="ruby">+*可循环使用，但符号之后的空格不能少，符号之前的空格也不能少
+</span>
+      -<span class="ruby"> 嵌套列表
+</span>       + 嵌套列表
+       + 嵌套列表
+        -<span class="ruby"> 嵌套列表
+</span>         * 嵌套列表
+      -<span class="ruby"> 嵌套列表</span>
+</code></pre></li>
+</ul>
+<h2 id="文字超链接">文字超链接</h2>
+<hr>
+<p><a href="http://ibruce.info/2013/11/26/markdown/" title="值得一看，来来来来">不如 markdown简明语法</a></p>
+<pre><code>    <span class="constant">Tooltips</span>可省略
+    [不如 markdown简明语法](<span class="symbol">http:</span>/<span class="regexp">/ibruce.info/</span><span class="number">2013</span>/<span class="number">11</span>/<span class="number">26</span>/markdown/ <span class="string">"值得一看，来来来来"</span>)
+</code></pre><h2 id="图片超链接">图片超链接</h2>
+<hr>
+<p><img src="https://github.com/xingsheng/quick-cocos2d-x/blob/develop/samples/benchmark/res/UIFont.png" alt="GitHub Mark" title="GitHub Mark"></p>
+<pre><code>    多个感叹号，Tooltips可省略，要设置大小只能借助HTML标记
+    ![GitHub Mark](http<span class="variable">s:</span>//github.<span class="keyword">com</span>/xingsheng/quick-cocos2d-<span class="keyword">x</span>/blob/develop/samples/benchmark/<span class="keyword">res</span>/UIFont.png <span class="string">"GitHub Mark"</span>)
+</code></pre><h2 id="图片超链接-1">图片超链接</h2>
+<hr>
+<p><a href="http://bruce-sha.github.io">不如</a><br><img src="http://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png" alt="GitHub Octocat"></p>
+<pre><code>    索引，<span class="number">1</span> <span class="number">2</span>可以是任意字符
+    [不如][<span class="number">1</span>]
+    ![<span class="constant">GitHub</span> <span class="constant">Octocat</span>][<span class="number">2</span>]
+
+    [<span class="number">1</span>]<span class="symbol">:http</span><span class="symbol">://bruce-sha</span>.github.io
+    [<span class="number">2</span>]<span class="symbol">:http</span><span class="symbol">://github</span>.global.ssl.fastly.net/images/modules/logos_page/<span class="constant">Octocat</span>.png
+</code></pre><h2 id="自动链接">自动链接</h2>
+<hr>
+<p><a href="http://ibruce.info">http://ibruce.info</a></p>
+<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x62;&#117;&#x2e;&#x72;&#117;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;">&#x62;&#117;&#x2e;&#x72;&#117;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;</a>
+
+<pre><code>    尖括号
+    <span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">ibruce.info</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">bu.ru@qq.com</span>&gt;</span>
+</code></pre><h2 id="代码：行内代码">代码：行内代码</h2>
+<hr>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> s = <span class="string">"hello Markdown"</span></div><div class="line">println( s )</div></pre></td></tr></table></figure>
+
+<pre><code>        在第一行后指定编程语言，也可以不指定
+</code></pre><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> s = <span class="string">"hello Markdown"</span></div><div class="line">println( s )</div></pre></td></tr></table></figure>
+
+<h1 id="代码：段落代码">代码：段落代码</h1>
+<hr>
+<pre><code><span class="keyword">val</span> s = <span class="string">"hello Markdown"</span>
+println( s )
+
+
+    每行文字前加<span class="number">4</span>个空格或者<span class="number">1</span>个Tab
+    <span class="keyword">val</span> s = <span class="string">"hello Markdown"</span>
+    println( s )
+</code></pre><h1 id="代码：hexo">代码：hexo</h1>
+<hr>
+<pre><code><span class="xml"><span class="tag">&lt;<span class="title">hexoescape</span>&gt;</span>0<span class="tag">&lt;/<span class="title">hexoescape</span>&gt;</span>
+
+可指定编程语言，『』代表左右大括号
+\</span><span class="template_tag">{% codeblock [title] [lang:lua] [<span class="keyword">url</span>] [link text] %\}
+    code snippet
+\{% endcodeblock %\}</span>
+</code></pre><h1 id="注释">注释</h1>
+<hr>
+<pre><code>用html的注释，好像只有这样？
+<span class="comment">&lt;!-- 注释 --&gt;</span>
+</code></pre><hr>
+<p><a href="http://ibruce.info/2013/11/26/markdown/" title="不如的博客">不如 markdown简明语法</a><br><a href="http://www.jianshu.com/p/q81RER" title="Markdown 新手指南">献给写作者的 Markdown 新手指南</a> </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="接触">接触</h2>
+<p><em>程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，<br>看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。</em></p>
+<hr>
+<h2 id="一些语法">一些语法</h2>
+<h2>]]>
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://sthkey.com/tags/markdown/"/>
+    
+      <category term="学习记录" scheme="http://sthkey.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[bash 环境变量]]></title>
+    <link href="http://sthkey.com/2014/10/05/bash-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <id>http://sthkey.com/2014/10/05/bash-环境变量/</id>
+    <published>2014-10-05T02:38:55.000Z</published>
+    <updated>2014-10-05T04:09:10.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight [lua]"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">code</span> snippet</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight [lua]"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="lin]]>
+    </summary>
+    
+      <category term="Linux/Unix" scheme="http://sthkey.com/tags/Linux-Unix/"/>
+    
+      <category term="学习记录" scheme="http://sthkey.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://sthkey.com/2014/09/23/hello-world/"/>
+    <id>http://sthkey.com/2014/09/23/hello-world/</id>
+    <published>2014-09-23T13:02:14.000Z</published>
+    <updated>2014-09-23T13:02:14.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for m]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
