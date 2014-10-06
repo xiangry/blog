@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Love XiangRY]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://sthkey.com/"/>
-  <updated>2014-10-05T08:41:46.192Z</updated>
+  <updated>2014-10-06T02:57:57.910Z</updated>
   <id>http://sthkey.com/</id>
   
   <author>
@@ -15,11 +15,61 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[阅读]]></title>
+    <link href="http://sthkey.com/2014/10/06/%E9%98%85%E8%AF%BB/"/>
+    <id>http://sthkey.com/2014/10/06/阅读/</id>
+    <published>2014-10-06T02:36:32.000Z</published>
+    <updated>2014-10-06T02:45:23.000Z</updated>
+    <content type="html"><![CDATA[<p><a id="more"></a><br><img src="http://img-pili.qiniudn.com/pili%2Fdesktop%2Fxiangranyi.jpg" alt=""></p>
+<p><a href="http://img-pili.qiniudn.com/pili%2Fdesktop%2Fxiangranyi.jpg">香染衣</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>]]>
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://sthkey.com/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://sthkey.com/2014/10/05/hello-world/"/>
+    <id>http://sthkey.com/2014/10/05/hello-world/</id>
+    <published>2014-10-05T12:46:21.000Z</published>
+    <updated>2014-10-05T12:46:21.000Z</updated>
+    <content type="html"><![CDATA[<p><a id="more"></a><br>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[初识markdown]]></title>
-    <link href="http://sthkey.com/2014/10/05/%E5%88%9D%E8%AF%86mackdown/"/>
-    <id>http://sthkey.com/2014/10/05/初识mackdown/</id>
+    <link href="http://sthkey.com/2014/10/05/%E5%88%9D%E8%AF%86markdown/"/>
+    <id>http://sthkey.com/2014/10/05/初识markdown/</id>
     <published>2014-10-05T04:10:30.000Z</published>
-    <updated>2014-10-05T06:34:40.000Z</updated>
+    <updated>2014-10-05T10:53:36.000Z</updated>
     <content type="html"><![CDATA[<h2 id="接触">接触</h2>
 <p><em>程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，<br>看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。</em></p>
 <hr>
@@ -27,21 +77,19 @@
 <h2><a id="more"></a></h2>
 <h3 id="标题">标题</h3>
 <ul>
-<li>Atx方式 加前缀#的个数表明标题层级</li>
+<li><p>Atx方式 加前缀#的个数表明标题层级</p>
+<pre><code>  多级标题，<span class="number">1</span>-<span class="number">6</span>级
+  <span class="comment">#一级标题</span>
+  <span class="comment">##二级标题</span>
+</code></pre></li>
+<li><p>Setext方式 加前缀#的个数表明标题层级</p>
+<pre><code>  大标题
+  =<span class="ruby">==
+</span>  小标题
+  -<span class="ruby">--</span>
+</code></pre></li>
 </ul>
-<pre><code>    多级标题
-    <span class="comment">#一级标题</span>
-    <span class="comment">##二级标题</span>
-    <span class="comment">###三级标题</span>
-    <span class="comment">####四级标题</span>
-</code></pre><ul>
-<li>Setext方式 加前缀#的个数表明标题层级</li>
-</ul>
-<pre><code>    大标题
-    =<span class="ruby">==
-</span>    小标题
-    -<span class="ruby">--</span>
-</code></pre><hr>
+<hr>
 <h3 id="列表">列表</h3>
 <ul>
 <li><p>列表 </p>
@@ -106,7 +154,7 @@
 </code></pre><h2 id="自动链接">自动链接</h2>
 <hr>
 <p><a href="http://ibruce.info">http://ibruce.info</a></p>
-<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x62;&#117;&#x2e;&#x72;&#117;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;">&#x62;&#117;&#x2e;&#x72;&#117;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;</a>
+<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x62;&#x75;&#46;&#114;&#x75;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#x62;&#x75;&#46;&#114;&#x75;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#x6d;</a>
 
 <pre><code>    尖括号
     <span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">ibruce.info</span>&gt;</span>
@@ -162,48 +210,50 @@ println( s )
     <link href="http://sthkey.com/2014/10/05/bash-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
     <id>http://sthkey.com/2014/10/05/bash-环境变量/</id>
     <published>2014-10-05T02:38:55.000Z</published>
-    <updated>2014-10-05T04:09:10.000Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight [lua]"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">code</span> snippet</div></pre></td></tr></table></figure>
+    <updated>2014-10-05T12:34:29.000Z</updated>
+    <content type="html"><![CDATA[<p>-日常应用和开发过程中，经常会遇到一些问题，比如移动删除某些文件，批量的做某些重复的工作、某些工具的使用，使用命令行工具会更加方便。若要使用命令行工具，一定要知道它的使用环境，在这里学习一下 bash shell 的环境变量。-</p>
+<p><a id="more"></a></p>
+<h4 id="查看系统的环境变量">查看系统的环境变量</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ env</div></pre></td></tr></table></figure>
 
+<h4 id="常见环境变量">常见环境变量</h4>
+<ul>
+<li>SHELL：当前用户使用的是哪种shell。shell的种类繁多，不同的shell在移植上会有差别，本人初学，使用的bash，未考虑移植</li>
+<li>PATH：决定了shell将要到哪些目录中寻找命令或程序。注意PATH一般会是/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin这种格式，’:’标示并列，标示PATH有多个值，查找个时候会依次按照这些值去查找</li>
+<li>HOME：当前用户的主目录</li>
+<li>HOSTNAME：是指主机的名称，许多应用程序如果要用到主机名的话，通常是从这个环境变量中来取得的</li>
+<li>PS1：是基本提示符，对于root用户是#，对于普通用户是$</li>
+<li>PS2：是附属提示符，默认是“&gt;”。可以通过修改此环境变量来修改当前的命令符，比如下列命令会将提示符修改成字符串“Hello,My NewPrompt :) ”</li>
+</ul>
+<h3 id="环境变量设置">环境变量设置</h3>
+<p><em>Linux/Unix系统是多用户系统，每个用户登录系统后，都会有一个专用的运行环境。通常每个用户默认的环境都是相同的，默认的这一组环境实际上就是一组全局的环境变量。对于单个用户，可以根据自己的需求对自己的运行环境进行定制，其方法就是修改相应的系统环境变量。</em></p>
+<p>这些环境变量都是在某些特定的文件中被定义的：</p>
+<pre><code>    /etc/profile:此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.
+    并从/etc/profile.d目录的配置文件中搜集<span class="built_in">shell</span>的设置.
+    /etc/bashrc:为每一个运行bash <span class="built_in">shell</span>的用户执行此文件.当bash <span class="built_in">shell</span>被打开时,该文件被读取.
+    ~/.bash_profile:每个用户都可使用该文件输入专用于自己使用的<span class="built_in">shell</span>信息,当用户登录时,该
+    文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件.
+    ~/.bashrc:该文件包含专用于你的bash <span class="built_in">shell</span>的bash信息,当登录时以及每次打开新的<span class="built_in">shell</span>时,该
+    该文件被读取.
+    ~/.bash_logout:当每次退出系统(退出bash <span class="built_in">shell</span>)时,执行该文件. 
+</code></pre><p>另外,/etc/profile中设定的变量(全局)的可以作用于任何用户,而~/.bashrc等中设定的变量(局部)只能继承/etc/profile中的变量,他们是”父子”关系.</p>
+<pre><code>    ~/.bash_profile 是交互式、login 方式进入 bash 运行的
+    ~/.bashrc 是交互式 non-login 方式进入 bash 运行的
+</code></pre><p>通常二者设置大致相同，所以通常前者会调用后者。</p>
+<p>设置生效：可以重启生效，也可以使用命令：source<br>    source /etc/profile</p>
+<p> .bash_profile、.bashrc、和.bash_logout详细区别还请看<a href="http://blog.163.com/wang_hai_fei/blog/static/309020312008728333912/" title="环境变量详情">环境变量详情</a></p>
+<hr>
+<p> 目前理解到的就这些，等有了新的收获再更新吧</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<figure class="highlight [lua]"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="lin]]>
+    <![CDATA[<p>-日常应用和开发过程中，经常会遇到一些问题，比如移动删除某些文件，批量的做某些重复的工作、某些工具的使用，使用命令行工具会更加方便。若要使用命令行工具，一定要知道它的使用环境，在这里学习一下 bash shell 的环境变量。-</p>
+<p>]]>
+    
     </summary>
     
       <category term="Linux/Unix" scheme="http://sthkey.com/tags/Linux-Unix/"/>
     
       <category term="学习记录" scheme="http://sthkey.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://sthkey.com/2014/09/23/hello-world/"/>
-    <id>http://sthkey.com/2014/09/23/hello-world/</id>
-    <published>2014-09-23T13:02:14.000Z</published>
-    <updated>2014-09-23T13:02:14.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for m]]>
-    </summary>
     
   </entry>
   
