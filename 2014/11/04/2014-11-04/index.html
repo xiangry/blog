@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>阅读 | XingSheng&#39;s Blog</title>
+  <title>2014.11.04 | XingSheng&#39;s Blog</title>
   <meta name="author" content="XingSheng">
   
   <meta name="description" content="heihei">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="阅读"/>
+  <meta property="og:title" content="2014.11.04"/>
   <meta property="og:site_name" content="XingSheng&#39;s Blog"/>
 
   
@@ -62,11 +62,11 @@
       
       
         <div class="icon"></div>
-        <time datetime="2014-10-06T02:36:32.000Z"><a href="/2014/10/06/阅读/">10月 6 2014</a></time>
+        <time datetime="2014-11-04T04:18:24.000Z"><a href="/2014/11/04/2014-11-04/">11月 4 2014</a></time>
       
       
   
-    <h1 class="title">阅读</h1>
+    <h1 class="title">2014.11.04</h1>
   
 
       
@@ -76,21 +76,38 @@
         
           
         
-        <p><a id="more"></a><br><img src="http://img-pili.qiniudn.com/pili%2Fdesktop%2Fxiangranyi.jpg" alt="霹雳布袋戏：香染衣" title="霹雳布袋戏：香染衣"></p>
-<hr>
-<h2 id="路在脚下"><em>路在脚下</em></h2>
-<p>本人对于设计真是头疼，排版更是想破了脑袋，让我着实恼火非常，<a href="http://book.douban.com/subject/3323633/" title="让你的作品更出色">写给大家看的设计书</a>这本书了给我帮助。这本书本身是很易懂，奈何设计这个领域是在是太丰富了，自己只是了解了点皮毛，还需要多多实践啊。</p>
+        <p>今天上个图，想到了英姿飒爽，豪气的一直找寻自我的 <em>快雪时晴 霁无瑕</em>。<code>英气</code></p>
+<a id="more"></a>
+
+<p><img src="http://img-pili.qiniudn.com/pili/desktop/jiwuxia_desk.jpg" alt="霁无瑕"> </p>
+<p><em>满夕霜雪人独影，红尘今古几月明？笑寒饮，惯新晴，千山已过风云行</em></p>
+<p>_昨天开个好头，但是却没写什么东西。没什么事却弄到了晚上0点多。原来留下的坑真深，真实凡是预则立不预则废啊。</p>
+<h2 id="Xcodebuild">Xcodebuild</h2>
+<p><em>当换一台机器的时候，你写的脚本还能正常跑起来吗？</em><code>:-D</code><br>有心整理一下ios的打包脚本，更智能一点，省去哪些配置的过程。</p>
+<p>有必要了解一下自动打包是如何实现的，那就是交给<code>xcrun</code>、<code>xcodebuild</code>。</p>
+<ul>
+<li><code>xcodebuild</code>负责将工程源文件编译成<em>xxx.app</em></li>
+<li><code>xcrun</code>负责给<em>xxx.app</em>签名并打包成<em>xxx.ipa</em></li>
+</ul>
+<h3 id="签名的过程">签名的过程</h3>
+<ul>
+<li><p>第一步清理工程：<br><code>xcodebuild -targe targetName clean           # 清理工程</code></p>
+</li>
+<li><p>第二部编译工程：<br><code>xcodebuild -target targetName build            #编译工程 另[build]是默认参数</code></p>
+</li>
+<li><p>第三部打包<br><code>打包的参数就是 xcrun -sdk iphoneos PackageApplication -v 源app路径 -o 输出的ipa路径</code><br><code>xcrun -sdk iphoneos PackageApplication -v $BuildPath/xxx.app -o xxx.ipa</code></p>
+</li>
+<li><p>给应用签名（这两个命令都可以实现）<br><code>xcodebuild -target targetName CODE_SIGN_IDENTITY=&quot;iPhone Distribution:XXXXXX&quot;</code><br><code>xcrun -sdk iphoneos PackageApplication -v 源app路径 -o 输出的ipa路径 --sign &quot;iPhone Distribution:XXXXXX&quot;</code></p>
+</li>
+</ul>
+<h2 id="新需求">新需求</h2>
+<p><em>工程有一些引用的路径不能够使用相对路径，当我的工程在另外一台机器上打包时就不能正常工作了，需要重新设置一下。</em><code>%&gt;_&lt;%</code></p>
 
       
     </div>
     <footer>
       
       
-  
-  <div class="tags">
-    <a href="/tags/阅读/">阅读</a>
-  </div>
-
       
         <div class="alignright share-box">
   

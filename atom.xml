@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Love XiangRY]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://sthkey.com/"/>
-  <updated>2014-10-06T03:34:02.811Z</updated>
+  <updated>2014-11-05T14:32:13.299Z</updated>
   <id>http://sthkey.com/</id>
   
   <author>
@@ -15,13 +15,175 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[2014.11.05]]></title>
+    <link href="http://sthkey.com/2014/11/05/2014-11-05/"/>
+    <id>http://sthkey.com/2014/11/05/2014-11-05/</id>
+    <published>2014-11-05T02:44:35.000Z</published>
+    <updated>2014-11-05T14:31:56.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="又是一个好天气">又是一个好天气</h2>
+<a id="more"></a>
+
+<p><img src="http://img-pili.qiniudn.com/pili/desktop/baixulinxun.gif" alt="百岫嶙峋"><br><em>湘波如泪色漻漻，楚厉迷魂逐恨遥，枫树夜猿愁自断，女萝山鬼语相邀</em></p>
+<p>今天正好遇到了android ndk的问题，具体是<code>.mk</code>的编写问题。</p>
+<a id="more"></a>
+
+<p><a href="http://www.cnblogs.com/leaven/archive/2011/01/25/1944688.html">参考 Android.mk文件语法规范使用模板</a></p>
+<h2 id="了解以下里面的一些参数">了解以下里面的一些参数</h2>
+<p><em>先看一段示例</em></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="constant">LOCAL_PATH</span> <span class="symbol">:</span>= <span class="variable">$(</span>call my-dir)</div><div class="line"><span class="keyword">include</span> <span class="variable">$(</span><span class="constant">CLEAR_VARS</span>)</div><div class="line"><span class="constant">LOCAL_MODULE</span><span class="symbol">:</span>= helloworld</div><div class="line"><span class="constant">LOCAL_SRC_FILES</span> <span class="symbol">:</span>= helloworld.c</div><div class="line"><span class="keyword">include</span> <span class="variable">$(</span><span class="constant">BUILD_SHARED_LIBRARY</span>)</div></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>LOCAL_PATH:=$(call my-dir)</strong><br>  一个<em>Android.mk file</em> 首先必须定义好<code>LOCAL_PATH</code>变量。它用于在开发树中查找资源文件，而这个当前的这个示例中<code>my-dir</code>，由编译系统提供，用于返回当前的路径（即包含<em>Android.mk</em>文件的目录）。</li>
+<li><strong>include $(CLEAR_VARS)</strong><br>  <code>CLEAR_VARS</code>由编译系统提供，指定让<code>GUN MAKEFILE</code>为你清除许多<code>LOCAL_XXX</code>变量（例如 <code>LOCAL_MODULE</code>,<code>LOCAL_SRC_FILES</code>,<code>LOCAL_STATIC_LIBRARIES</code>,等等……）,除了<code>LOCAL_PATH</code>。_这是有必要的，因为所有的编译控制文件都在同一个<code>GUN MAKE</code>执行环境中，所有的变量都是全局的</li>
+<li><p><strong>LOCAL_MODULE:= helloworld</strong><br>  <code>LOCAL_MODULE</code>变量必须定义，用来标识你在_Android.mk文件中描述的每个模块。模块名必须 <strong>唯一</strong> 的，二期不能包含任何空格。注意编译系统会自动产生何时的前缀和后缀，换句话说，一个被命名为<code>foo</code>的共享库模块，将会生成<code>libfoo.so</code>文件。</p>
+<p>  <strong>重要注意事项</strong><br>  如果你把库命名为<code>libhelloworld</code>，编译系统将不会添加任何的<code>lib</code>前缀，也会生成<em>libhelloworld.so</em>,这是为了支持来源于Android平台的源代码的<em>Android.mk</em>文件。</p>
+</li>
+<li><p><strong>LOCAL_SRC_FILES:=helloworld.c</strong><br>  <code>LOCAL_SRC_FILES</code>变量必须包含将要编译打包进模块中的<code>C</code>或<code>C++</code>源代码文件。<strong>注意</strong>，你不用在这里列出头文件和包含文件，因为系统将会自动为你找出依赖的文件；积极列出之金额传递给编译器的源代码文件就好【<em>另外<code>C++</code>的源文件扩展名为<code>cpp</code>。制定一个不同的扩展名也是可能的，只要定义<code>LOCAL_DEFAULT_CPP_EXTENSION</code>变量,不要忘记点号啊。</em>】</p>
+</li>
+<li><p><strong>include $(BUILD_SHARED_LIBRARY)</strong><br>  <code>BUILD_SHARED_LIBRARY</code>是编译系统提供的变量，指向一个<code>GUN Makefile</code>脚本（应该就是在<code>build/core</code>目录线的<code>shared_library.mk</code>），负责收集自从上次调用<code>include $(CLEAR_VARS)</code>依赖，定义在LOCAL_XXX变量中的所有信息，并决定便以什么，如何正确地去做。并根据其规则生成静态库。同理对于静态库。</p>
+</li>
+</ul>
+<h2 id="拿了一血get">拿了一血<code>get</code></h2>
+<p>这是一份你应该在<code>Android.mk</code>中依赖或定义的变量列表，可以定义其他变量来为自己使用，但是NDK编译系统保留了一血变量名</p>
+<ul>
+<li>以<code>LOCAL_</code>开头的名字（<code>LOCAL_MODULE</code>）</li>
+<li>以<code>PRIVATE_</code>,<code>NDK_</code>或则<code>APP_</code>揩油的名字（<em>内部使用</em>）</li>
+<li>小写名字（<em>内部使用,例如<code>my_dir</code></em>）</li>
+</ul>
+<p><em>再看一段示例</em></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">MY_SOURCES := foo.c</div><div class="line">ifne<span class="string">q (<span class="variable">$(</span>MY_CONFIG_BAR)</span>,)</div><div class="line">MY_SOURCES += bar.c</div><div class="line">endif</div><div class="line">LOCAL_SRC_FILES += <span class="variable">$(</span>MY_SOURCES)</div></pre></td></tr></table></figure>
+
+<p>在这些<code>GUN Make</code>变量在你的<code>Android.mk</code>文件解析之前，就由编译系统定义好了。（<em>NDK呢能分析Android.mk多次，每一次某些变量可能会有不同</em>）</p>
+<ul>
+<li><strong>CLEAR_VARS</strong><br>指向一个编译脚本，几乎所有未定义的<code>LOCLA_XXX</code>变量都在<em>Module-description</em>节中列出。你必须在开始一个新模块前包含这个脚本。 <code>include $(CLEAR_VARS)</code></li>
+</ul>
+<p><em>虽然只做了两站地铁，出地铁的那一刻有一种重生的感觉</em><code>:-D</code></p>
+<p>挂个角色<br>貌似写不完了</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="又是一个好天气">又是一个好天气</h2>
+<!-- more -->
+
+<p><img src="http://img-pili.qiniudn.com/pili/desktop/baixulinxun.gif" alt="百岫嶙峋"><br><em>湘波如泪色漻漻，楚厉迷魂逐恨遥，枫树夜猿愁自断，女萝山鬼语相邀</em></p>
+<p>今天正好遇到了android ndk的问题，具体是<code>.mk</code>的编写问题。</p>
+]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2014.11.04]]></title>
+    <link href="http://sthkey.com/2014/11/04/2014-11-04/"/>
+    <id>http://sthkey.com/2014/11/04/2014-11-04/</id>
+    <published>2014-11-04T04:18:24.000Z</published>
+    <updated>2014-11-04T14:15:00.000Z</updated>
+    <content type="html"><![CDATA[<p>今天上个图，想到了英姿飒爽，豪气的一直找寻自我的 <em>快雪时晴 霁无瑕</em>。<code>英气</code></p>
+<a id="more"></a>
+
+<p><img src="http://img-pili.qiniudn.com/pili/desktop/jiwuxia_desk.jpg" alt="霁无瑕"> </p>
+<p><em>满夕霜雪人独影，红尘今古几月明？笑寒饮，惯新晴，千山已过风云行</em></p>
+<p>_昨天开个好头，但是却没写什么东西。没什么事却弄到了晚上0点多。原来留下的坑真深，真实凡是预则立不预则废啊。</p>
+<h2 id="Xcodebuild">Xcodebuild</h2>
+<p><em>当换一台机器的时候，你写的脚本还能正常跑起来吗？</em><code>:-D</code><br>有心整理一下ios的打包脚本，更智能一点，省去哪些配置的过程。</p>
+<p>有必要了解一下自动打包是如何实现的，那就是交给<code>xcrun</code>、<code>xcodebuild</code>。</p>
+<ul>
+<li><code>xcodebuild</code>负责将工程源文件编译成<em>xxx.app</em></li>
+<li><code>xcrun</code>负责给<em>xxx.app</em>签名并打包成<em>xxx.ipa</em></li>
+</ul>
+<h3 id="签名的过程">签名的过程</h3>
+<ul>
+<li><p>第一步清理工程：<br><code>xcodebuild -targe targetName clean           # 清理工程</code></p>
+</li>
+<li><p>第二部编译工程：<br><code>xcodebuild -target targetName build            #编译工程 另[build]是默认参数</code></p>
+</li>
+<li><p>第三部打包<br><code>打包的参数就是 xcrun -sdk iphoneos PackageApplication -v 源app路径 -o 输出的ipa路径</code><br><code>xcrun -sdk iphoneos PackageApplication -v $BuildPath/xxx.app -o xxx.ipa</code></p>
+</li>
+<li><p>给应用签名（这两个命令都可以实现）<br><code>xcodebuild -target targetName CODE_SIGN_IDENTITY=&quot;iPhone Distribution:XXXXXX&quot;</code><br><code>xcrun -sdk iphoneos PackageApplication -v 源app路径 -o 输出的ipa路径 --sign &quot;iPhone Distribution:XXXXXX&quot;</code></p>
+</li>
+</ul>
+<h2 id="新需求">新需求</h2>
+<p><em>工程有一些引用的路径不能够使用相对路径，当我的工程在另外一台机器上打包时就不能正常工作了，需要重新设置一下。</em><code>%&gt;_&lt;%</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天上个图，想到了英姿飒爽，豪气的一直找寻自我的 <em>快雪时晴 霁无瑕</em>。<code>英气</code></p>
+]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2014.11.03]]></title>
+    <link href="http://sthkey.com/2014/11/03/2014-11-03/"/>
+    <id>http://sthkey.com/2014/11/03/2014-11-03/</id>
+    <published>2014-11-03T06:28:52.000Z</published>
+    <updated>2014-11-04T04:25:22.000Z</updated>
+    <content type="html"><![CDATA[<p>想找个图片，脑海突然闪过紫色余分这个角色，虽然张狂，却也有敬畏。紫色出场不多，却每每有一种唯美。<br><a id="more"></a><br><img src="http://img-pili.qiniudn.com/pili/desktop/ziseyufen.gif" alt="紫色余分"><br><em>“我的王子啊…”,“如果再让我遇见你一次，我还是会选择和你比剑，然后输给你，做你的剑侍，在一路听你编剑声的故事”</em></p>
+<hr>
+<h2 id="天气">天气</h2>
+<p>今天算得上难得的好天气了，晴。经常路过的那片爬山虎大部分都红了，早先红的那片叶子落得没剩多少，这就是秋天。看着沐浴在阳光下的这真实地一切，反而有一种莫名的不真切。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>想找个图片，脑海突然闪过紫色余分这个角色，虽然张狂，却也有敬畏。紫色出场不多，却每每有一种唯美。<br>]]>
+    
+    </summary>
+    
+      <category term="练 随便写点什么" scheme="http://sthkey.com/tags/%E7%BB%83-%E9%9A%8F%E4%BE%BF%E5%86%99%E7%82%B9%E4%BB%80%E4%B9%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[好博客]]></title>
+    <link href="http://sthkey.com/2014/10/27/%E5%A5%BD%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://sthkey.com/2014/10/27/好博客/</id>
+    <published>2014-10-27T02:15:17.000Z</published>
+    <updated>2014-10-27T02:28:23.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://ohcoder.com/">Oh!Coder</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://ohcoder.com/">Oh!Coder</a></p>
+]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Lua Debug]]></title>
+    <link href="http://sthkey.com/2014/10/16/Lua-Debug/"/>
+    <id>http://sthkey.com/2014/10/16/Lua-Debug/</id>
+    <published>2014-10-16T06:18:54.000Z</published>
+    <updated>2014-10-16T07:41:42.000Z</updated>
+    <content type="html"><![CDATA[<p><a id="more"></a><br><em>当要定位lua某个方法被调用的位置通常可以通过打印堆栈信息来做到，刚接触，找到这篇文章<a href="http://see.sl088.com/wiki/Lua_debug" title="Lua Debug">“Lua debug”</a></em></p>
+<hr>
+<h3 id="debug">debug</h3>
+<p>返回当前的堆栈信息</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">debug</span>.traceback()</div></pre></td></tr></table></figure>
+
+<h3 id="sethook">sethook</h3>
+<p>一个非常有意思的机制，注册一个函数，在程序运行中某一事件触发时调用这个函数。监听的事件有”call”、”return”、”line”、”count”。<a href="http://book.luaer.cn/_130.htm">Hooks</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby">- 打印解释器执行的每一个新行的行号：</div><div class="line"></span>debug.traceback()</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>]]>
+    
+    </summary>
+    
+      <category term="Lua" scheme="http://sthkey.com/tags/Lua/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[阅读]]></title>
     <link href="http://sthkey.com/2014/10/06/%E9%98%85%E8%AF%BB/"/>
     <id>http://sthkey.com/2014/10/06/阅读/</id>
     <published>2014-10-06T02:36:32.000Z</published>
-    <updated>2014-10-06T02:45:23.000Z</updated>
-    <content type="html"><![CDATA[<p><a id="more"></a><br><img src="http://img-pili.qiniudn.com/pili%2Fdesktop%2Fxiangranyi.jpg" alt=""></p>
-<p><a href="http://img-pili.qiniudn.com/pili%2Fdesktop%2Fxiangranyi.jpg">香染衣</a></p>
+    <updated>2014-10-13T02:16:39.000Z</updated>
+    <content type="html"><![CDATA[<p><a id="more"></a><br><img src="http://img-pili.qiniudn.com/pili%2Fdesktop%2Fxiangranyi.jpg" alt="霹雳布袋戏：香染衣" title="霹雳布袋戏：香染衣"></p>
+<hr>
+<h2 id="路在脚下"><em>路在脚下</em></h2>
+<p>本人对于设计真是头疼，排版更是想破了脑袋，让我着实恼火非常，<a href="http://book.douban.com/subject/3323633/" title="让你的作品更出色">写给大家看的设计书</a>这本书了给我帮助。这本书本身是很易懂，奈何设计这个领域是在是太丰富了，自己只是了解了点皮毛，还需要多多实践啊。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>]]>
@@ -69,7 +231,7 @@
     <link href="http://sthkey.com/2014/10/05/%E5%88%9D%E8%AF%86markdown/"/>
     <id>http://sthkey.com/2014/10/05/初识markdown/</id>
     <published>2014-10-05T04:10:30.000Z</published>
-    <updated>2014-10-05T10:53:36.000Z</updated>
+    <updated>2014-10-13T02:16:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="接触">接触</h2>
 <p><em>程序猿一只，突然意识到要写点东西，为hexo而接触到了markdown这个为广大码农所用的标记语言，<br>看来自己不是个合格的程序员那。在这里用这片文字作为自己的第一步，hello world。</em></p>
 <hr>
@@ -154,7 +316,7 @@
 </code></pre><h2 id="自动链接">自动链接</h2>
 <hr>
 <p><a href="http://ibruce.info">http://ibruce.info</a></p>
-<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x62;&#x75;&#46;&#114;&#x75;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#x62;&#x75;&#46;&#114;&#x75;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#x6d;</a>
+<a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#98;&#x75;&#x2e;&#x72;&#117;&#64;&#113;&#113;&#x2e;&#99;&#111;&#x6d;">&#98;&#x75;&#x2e;&#x72;&#117;&#64;&#113;&#113;&#x2e;&#99;&#111;&#x6d;</a>
 
 <pre><code>    尖括号
     <span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">ibruce.info</span>&gt;</span>
