@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2014.11.12 | XingSheng&#39;s Blog</title>
+  <meta name="author" content="XingSheng">
+  
+  <meta name="description" content="heihei">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="2014.11.12"/>
+  <meta property="og:site_name" content="XingSheng&#39;s Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
+  <link rel="alternate" href="/atom.xml" title="XingSheng&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+  
+<script type="text/javascript">
+#你的百度统计代码
+</script>
+
+  # 
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div id="nav-top">
+  <div class="alignleft main-title">
+    <h1>XingSheng&#39;s Blog</h1>
+    <h2></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+      
+        <div class="icon"></div>
+        <time datetime="2014-11-12T02:40:06.000Z"><a href="/2014/11/12/2014-11-12/">11月 12 2014</a></time>
+      
+      
+  
+    <h1 class="title">2014.11.12</h1>
+  
+
+      
+    </header>
+    <div class="entry">
+      
+        
+          
+        
+        <p>地狱变 </p>
+<a id="more"></a>
+
+<p><img src="http://img-pili.qiniudn.com/pili/desktop/diyubian.jpg" alt="霹雳 地狱变"><br><em><strong>黄泉正在暴乱，地狱正在巨变，当屠戮不再可怕，只有人，才是真正的魔鬼</strong></em></p>
+<h2 id="‘功能’宏">‘功能’宏</h2>
+<p><code>GUN Make</code>必须通过使用<code>$(call &lt;function&gt;)</code>来求值，他们返回本地化的信息</p>
+<ul>
+<li><p><strong>my-dir</strong><br>  返回当前<em>Android.mk所在的目录路径，相对于NDK编译系统的顶层。这是有用的，在_Android.mk</em>问价的开头如此定义 <code>LOCAL_PATH :=$(call my-dir)</code></p>
+</li>
+<li><p><strong>all-subdir-makefiles</strong><br>  返回一个位于当前<code>my-dir</code>路径的子目录列表。<br>  例如下面的目录层次<br>  <em>sources/foo/Android.mk<br>  sources/foo/lib1/Android.mk<br>  sources/foo/lib2/Android.mk</em><br>  如果<em>sources/foo/Android.mk</em>中包含一行：<code>include $(call all-subdir-makefiles)</code><br>  那么它就会自动包含<em>sources/foo/lib1/Android.mk</em> <em>sources/foo/lib2/Android.mk</em><br>  这项功能用于向编译系统提供深层次嵌套的代码目录层次。注意，在默认情况下，NDK将会只搜索在<em>source/*/Android.mk</em>中的文件</p>
+</li>
+<li><p><strong>this-makefile</strong><br>  返回当前Makefile的路径（即这个函数调用的地方）</p>
+</li>
+<li><p><strong>parent-makefile</strong><br>  返回调用树中父Makefile路径。即包含当前的Makefile的Nakefile路径</p>
+</li>
+<li><p><strong>grand-parent-makefile</strong><br>  ……</p>
+</li>
+</ul>
+<h2 id="模块描述变量">模块描述变量</h2>
+<p>下面的变量用于向编译系统描述你的模块。你用该定义在<code>include $(CLEAR_VARS)</code>和<code>include $(BUILD_XXXX)</code>之间定义。正如前面描写的那样,<code>$(CLEAR_VARS)</code>是一个脚本，清除所有这些变量。</p>
+<ul>
+<li><p><strong>LOCAL_PATH</strong><br>  这个变量用于给出当前的路径，必须在<em>Android.mk</em>的开头定义，可以这样使用：<code>LOCAL_PATH :=$(call my-dir)</code><br>  这个变量不会被$(CLEAR_VARS)清除，因此每个Android.mk只需要定义一次（即使你在一个文件中定义了几个模块的情况下）。</p>
+</li>
+<li><p><strong>LOCAL_MODULE</strong></p>
+<p>  这是你模块的名字，它必须是唯一的，而且不能包含空格。你必须在包含任一的$(BUILD_XXXX)脚本之前定义它。模块的名字决定了省城文件的名字。例如，若果一个共享库模块的名字是<code>foo</code>，生成的文件名字就是libfoo.so。但是，在你的NDK生成文件中，应该只涉及（引用）有正常名字的其他模块。</p>
+</li>
+<li><p><strong>LOCAL_SRC_FILES</strong><br>  这是要变异的源代码文件列表。只要列出要传递给编译器的文件，因为编译系统自动为你计算依赖。注意源代码文件名都是相对亦<code>LOCAL_PATH</code>的，你可以使用路径部分例如：</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="type">LOCAL_SRC_FILES</span> :=foo.<span class="built_in">c</span> \</div><div class="line">  			toto/bar.<span class="built_in">c</span></div><div class="line"># 注意：在生成的文件中都要使用<span class="type">UNIX</span>风格的反斜杠，windows的反斜杠不会被正确处理</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>LOCAL_CPP_EXTENSION</strong><br>  这是一个可选变量，用来指定C++代码文件的扩展名，默认是<code>.cpp</code>，但是你可以改变他</p>
+</li>
+<li><p><strong>LOCLA_C_INCLUDES</strong><br>  路径是可选配置，是从根目录开始的</p>
+<pre><code>  ？？？
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+      
+      
+        <div class="alignright share-box">
+  
+</div>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <div class="entry">
+    
+      <span><a href="/tags/Linux-Unix/">Linux/Unix<small>1</small></a></span>
+    
+      <span><a href="/tags/Lua/">Lua<small>1</small></a></span>
+    
+      <span><a href="/tags/markdown/">markdown<small>1</small></a></span>
+    
+      <span><a href="/tags/练-随便写点什么/">练 随便写点什么<small>1</small></a></span>
+    
+      <span><a href="/tags/阅读/">阅读<small>1</small></a></span>
+    
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div id="foot-nav">
+  <ul class="social">
+    
+      <li><a class="github" href="https://github.com/DaiXiang" title="github">github</a></li>
+    
+      <li><a class="rss" href="/atom.xml" title="rss">rss</a></li>
+    
+  </ul>
+</div>
+<div>
+  
+    &copy; 2014 XingSheng
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<script type="text/javascript">
+  function navbar() {
+    var top = $('#nav-top').innerHeight();
+    $('#header').css('min-height', top);
+  }
+  navbar();
+  $(window).resize(navbar);
+</script>
+<div id="totop" class="footer-btn">
+  <a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<script type="text/javascript">
+  $(function(){ 
+	// When to show the scroll link
+	// higher number = scroll link appears further down the page   
+	var upperLimit = 800;
+	
+	// Our scroll link element
+	var scrollElem = $('#totop');
+   
+	// Scroll to top speed
+	var scrollSpeed = 500;
+   
+	// Show and hide the scroll to top link based on scroll position   
+	scrollElem.hide();
+	$(window).scroll(function () {            
+		var scrollTop = $(document).scrollTop();       
+		if ( scrollTop > upperLimit ) {
+		  $(scrollElem).stop().fadeTo(300, 1); // fade back in
+		  $(scrollElem).animate({bottom: "50px"}, { queue: false, duration: 10 });
+		} else {
+		  $(scrollElem).stop().fadeTo(300, 0); // fade out
+	      $(scrollElem).animate({bottom: "-200px"}, { queue: false, duration: 10 });
+			
+		}
+	});
+
+	// Scroll to top animation on click
+	$(scrollElem).click(function(){
+	  $('html, body').animate({scrollTop:0}, scrollSpeed);
+	  $(scrollElem).animate({bottom: "-200px"}, { queue: false, duration: 10 });
+	  return false;
+	});
+  });
+</script>
+</body>
+</html>
